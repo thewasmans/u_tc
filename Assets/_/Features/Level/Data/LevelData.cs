@@ -1,17 +1,40 @@
-using UnityEditor;
-using UnityEditor.Callbacks;
 using UnityEngine;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using UnityEditor.SceneManagement;
+using UnityEditor;
+using UnityEditor.Build.Content;
+using UnityEditor.WindowsStandalone;
 
-[CreateAssetMenu(fileName = "LevelData", menuName = "LevelData", order = 0)]
-public class LevelData : ScriptableObject
+namespace Level.Data
 {
-    [OnOpenAsset]
-    public static bool OnDoubleClick(int instanceID, int line, int row)
+    [CreateAssetMenu(fileName = "LevelData", menuName = "LevelData", order = 0)]
+    public class LevelData : ScriptableObject
     {
-        Object instance = EditorUtility.InstanceIDToObject(instanceID);
+        #region Publics
+        public void OpenLevel()
+        {
+            foreach (var indexScene in _sceneIndex)
+            {
+                string pathScene = EditorBuildSettings.scenes[indexScene].path;
+                EditorSceneManager.OpenScene(pathScene, OpenSceneMode.Additive);
+            }
+        }
 
-        if(instance is LevelData) Debug.Log("Level Data Opened");
+        public void LoadLevel()
+        {
+            foreach (var indexScene in _sceneIndex) 
+            {
+                string pathScene = EditorBuildSettings.scenes[indexScene].path;
+                Scene scene = SceneManager.GetSceneByPath(pathScene);
+                if(scene != null && !scene.isLoaded) SceneManager.LoadSceneAsync(indexScene, LoadSceneMode.Additive);
+            }
+        }
+        #endregion
 
-        return true;
+        #region Private and Protected
+        public List<int> _sceneIndex;
+
+        #endregion
     }
 }

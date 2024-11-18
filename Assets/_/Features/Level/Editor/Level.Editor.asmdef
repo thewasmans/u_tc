@@ -1,7 +1,9 @@
 {
     "name": "Level.Editor",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:9a16605f7fe8caa43b224c81b12b3923"
+    ],
     "includePlatforms": [
         "Editor"
     ],

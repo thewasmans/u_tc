@@ -1,3 +1,16 @@
 {
-	"name": "Level.Runtime"
+    "name": "Level.Runtime",
+    "rootNamespace": "",
+    "references": [
+        "GUID:9a16605f7fe8caa43b224c81b12b3923"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
