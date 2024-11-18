@@ -30,6 +30,24 @@ namespace Level.Data
                 if(scene != null && !scene.isLoaded) SceneManager.LoadSceneAsync(indexScene, LoadSceneMode.Additive);
             }
         }
+
+        public void CloseLevel()
+        {
+            foreach (var indexScene in _sceneIndex)
+            {
+                Scene scene = SceneManager.GetSceneAt(indexScene);
+                if(scene.isLoaded) SceneManager.UnloadSceneAsync(scene);
+            }
+        }
+
+        public void UnloadLevel()
+        {
+            foreach (var indexScene in _sceneIndex)
+            {
+                Scene scene = SceneManager.GetSceneAt(indexScene);
+                if(scene.isLoaded) EditorSceneManager.CloseScene(scene, true);
+            }
+        }
         #endregion
 
         #region Private and Protected
