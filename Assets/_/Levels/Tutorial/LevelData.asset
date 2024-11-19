@@ -12,6 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb003f05b75dc74794e94a292853458, type: 3}
   m_Name: LevelData
   m_EditorClassIdentifier: 
-  _scenePath:
-  - Assets/_/Levels/Tutorial/Scenes/Light.unity
-  - Assets/_/Levels/Tutorial/Scenes/System.unity
+  _scenePaths:
+  - m_AssetGUID: 32cccb304e652d742b994dc4bd123307
+    m_SubObjectName: 
+    m_SubObjectGUID: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: fd869f6a5b8ee8a488e80653a25f4afd
+    m_SubObjectName: 
+    m_SubObjectGUID: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 1
