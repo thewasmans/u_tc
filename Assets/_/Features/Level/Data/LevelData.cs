@@ -17,7 +17,6 @@ namespace Level.Data
             for (int i = 0; i < _scenePaths.Count; i++)
             {
                 var scenePath = _scenePaths[i];
-                
                 scenePath.LoadSceneAsync(LoadSceneMode.Additive);
             }
         }
