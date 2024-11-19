@@ -1,7 +1,9 @@
 {
     "name": "Misc.Editor",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:d916ca9940b65b64491802a509a4ca3f"
+    ],
     "includePlatforms": [
         "Editor"
     ],
