@@ -15,7 +15,7 @@ namespace Level.Editor
             switch (target)
             {
                 case LevelData levelData:
-                    levelData.OpenLevel();
+                    levelData.OpenLevelEditor();
                     return true;
 
                 default:

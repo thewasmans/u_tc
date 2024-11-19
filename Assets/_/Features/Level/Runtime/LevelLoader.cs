@@ -14,7 +14,7 @@ namespace Level.Runtime
                 return;
             }
             
-            _levelData?.LoadLevel();
+            _levelData?.OpenLevel();
 
         }
         #endregion

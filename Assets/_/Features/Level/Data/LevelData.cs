@@ -2,8 +2,6 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEditor.SceneManagement;
-using UnityEditor;
-using System.Linq;
 
 namespace Level.Data
 {
@@ -11,38 +9,43 @@ namespace Level.Data
     public class LevelData : ScriptableObject
     {
         #region Publics
-        public void OpenLevel()
+
+#if UNITY_EDITOR
+        public void OpenLevelEditor()
         {
             foreach (var scenePath in _scenePath)
             {
                 EditorSceneManager.OpenScene(scenePath, OpenSceneMode.Additive);
             }
         }
+#endif
 
-        public void LoadLevel()
+        public void OpenLevel()
         {
-            foreach (var scenePath in _scenePath) 
+            foreach (var scenePath in _scenePath)
             {
                 Scene scene = SceneManager.GetSceneByPath(scenePath);
-                if(scene != null && !scene.isLoaded) SceneManager.LoadSceneAsync(scenePath, LoadSceneMode.Additive);
+                if (scene != null && !scene.isLoaded) SceneManager.LoadSceneAsync(scenePath, LoadSceneMode.Additive);
             }
         }
+
+#if UNITY_EDITOR
+        public void CloseLevelEditor()
+        {
+            foreach (var scenePath in _scenePath)
+            {
+                Scene scene = SceneManager.GetSceneByName(scenePath);
+                if (scene.isLoaded) EditorSceneManager.CloseScene(scene, true);
+            }
+        }
+#endif
 
         public void CloseLevel()
         {
             foreach (var scenePath in _scenePath)
             {
                 Scene scene = SceneManager.GetSceneByName(scenePath);
-                if(scene.isLoaded) SceneManager.UnloadSceneAsync(scene);
-            }
-        }
-
-        public void UnloadLevel()
-        {
-            foreach (var scenePath in _scenePath)
-            {
-                Scene scene = SceneManager.GetSceneByName(scenePath);
-                if(scene.isLoaded) EditorSceneManager.CloseScene(scene, true);
+                if (scene.isLoaded) SceneManager.UnloadSceneAsync(scene);
             }
         }
         #endregion
