@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEditor.SceneManagement;
 using UnityEditor;
-using UnityEditor.Build.Content;
-using UnityEditor.WindowsStandalone;
 
 namespace Level.Data
 {
