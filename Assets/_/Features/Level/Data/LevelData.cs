@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEditor.SceneManagement;
 using UnityEditor;
+using System.Linq;
 
 namespace Level.Data
 {
@@ -12,44 +13,42 @@ namespace Level.Data
         #region Publics
         public void OpenLevel()
         {
-            foreach (var indexScene in _sceneIndex)
+            foreach (var scenePath in _scenePath)
             {
-                string pathScene = EditorBuildSettings.scenes[indexScene].path;
-                EditorSceneManager.OpenScene(pathScene, OpenSceneMode.Additive);
+                EditorSceneManager.OpenScene(scenePath, OpenSceneMode.Additive);
             }
         }
 
         public void LoadLevel()
         {
-            foreach (var indexScene in _sceneIndex) 
+            foreach (var scenePath in _scenePath) 
             {
-                string pathScene = EditorBuildSettings.scenes[indexScene].path;
-                Scene scene = SceneManager.GetSceneByPath(pathScene);
-                if(scene != null && !scene.isLoaded) SceneManager.LoadSceneAsync(indexScene, LoadSceneMode.Additive);
+                Scene scene = SceneManager.GetSceneByPath(scenePath);
+                if(scene != null && !scene.isLoaded) SceneManager.LoadSceneAsync(scenePath, LoadSceneMode.Additive);
             }
         }
 
         public void CloseLevel()
         {
-            foreach (var indexScene in _sceneIndex)
+            foreach (var scenePath in _scenePath)
             {
-                Scene scene = SceneManager.GetSceneAt(indexScene);
+                Scene scene = SceneManager.GetSceneByName(scenePath);
                 if(scene.isLoaded) SceneManager.UnloadSceneAsync(scene);
             }
         }
 
         public void UnloadLevel()
         {
-            foreach (var indexScene in _sceneIndex)
+            foreach (var scenePath in _scenePath)
             {
-                Scene scene = SceneManager.GetSceneAt(indexScene);
+                Scene scene = SceneManager.GetSceneByName(scenePath);
                 if(scene.isLoaded) EditorSceneManager.CloseScene(scene, true);
             }
         }
         #endregion
 
         #region Private and Protected
-        public List<int> _sceneIndex;
+        public List<string> _scenePath;
 
         #endregion
     }
