@@ -1,0 +1,22 @@
+{
+    "name": "Paps.UnityToolbarExtenderUIToolkit.Samples",
+    "rootNamespace": "",
+    "references": [
+<<<<<<<< Updated upstream:Assets/_/Features/Misc/Editor/Misc.Editor.asmdef
+        "GUID:d916ca9940b65b64491802a509a4ca3f"
+========
+        "GUID:8d62da4aabd2a19419c7378d23ea5849"
+>>>>>>>> Stashed changes:Assets/Plugins/UIToolBarExtender/Package/Samples~/BasicElements/Paps.UnityToolbarExtenderUIToolkit.Samples.asmdef
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

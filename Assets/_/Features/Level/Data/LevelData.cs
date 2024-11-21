@@ -14,10 +14,11 @@ namespace Level.Data
 #if UNITY_EDITOR
         public void OpenLevelEditor()
         {
-            for (int i = 0; i < _scenePaths.Count; i++)
+            for (int i = 0; i < _sceneReferences.Count; i++)
             {
-                var scenePath = _scenePaths[i];
-                scenePath.LoadSceneAsync(LoadSceneMode.Additive);
+                var sceneReference = _sceneReferences[i];
+                string scenePath = AssetDatabase.GUIDToAssetPath(sceneReference.AssetGUID);
+                EditorSceneManager.OpenScene(scenePath, OpenSceneMode.Additive);
             }
         }
 #endif
@@ -26,9 +27,9 @@ namespace Level.Data
         {
             if (Application.isPlaying)
             {
-                for (int i = 0; i < _scenePaths.Count; i++)
+                for (int i = 0; i < _sceneReferences.Count; i++)
                 {
-                    var scenePath = _scenePaths[i];
+                    var scenePath = _sceneReferences[i];
                     scenePath.LoadSceneAsync(LoadSceneMode.Additive);
                 }
             }
@@ -37,9 +38,9 @@ namespace Level.Data
 #if UNITY_EDITOR
         public void CloseLevelEditor()
         {
-            for (int i = 0; i < _scenePaths.Count; i++)
+            for (int i = 0; i < _sceneReferences.Count; i++)
             {
-                string path = AssetDatabase.GUIDToAssetPath(_scenePaths[i].AssetGUID);
+                string path = AssetDatabase.GUIDToAssetPath(_sceneReferences[i].AssetGUID);
                 Scene scene = SceneManager.GetSceneByPath(path);
                 EditorSceneManager.CloseScene(scene, true);
             }
@@ -48,9 +49,9 @@ namespace Level.Data
 
         public void CloseLevel()
         {
-            for (int i = 0; i < _scenePaths.Count; i++)
+            for (int i = 0; i < _sceneReferences.Count; i++)
             {
-                string path = AssetDatabase.GUIDToAssetPath(_scenePaths[i].AssetGUID);
+                string path = AssetDatabase.GUIDToAssetPath(_sceneReferences[i].AssetGUID);
                 Scene scene = SceneManager.GetSceneByPath(path);
                 EditorSceneManager.CloseScene(scene, true);
             }
@@ -58,7 +59,7 @@ namespace Level.Data
         #endregion
 
         #region Private and Protected
-        public List<AssetReference> _scenePaths;
+        public List<AssetReference> _sceneReferences;
         #endregion
     }
 }

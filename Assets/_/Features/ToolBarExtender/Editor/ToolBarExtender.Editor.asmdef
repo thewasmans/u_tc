@@ -1,0 +1,20 @@
+{
+    "name": "ToolBarExtender.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:80efe081187c7f242b05f02bcea1059f",
+        "GUID:9a16605f7fe8caa43b224c81b12b3923",
+        "GUID:d916ca9940b65b64491802a509a4ca3f"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

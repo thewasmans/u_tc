@@ -1,0 +1,6 @@
+{
+    "name": "ToolBarExtender.Runtime",
+    "references": [],
+    "includePlatforms": [],
+    "rootNamespce": "ToolBarExtender.Runtime"
+}
