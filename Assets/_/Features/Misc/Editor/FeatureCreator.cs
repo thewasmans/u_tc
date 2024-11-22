@@ -59,18 +59,30 @@ namespace Misc.Editor
             }
             GUI.enabled = true;
 
-            var style = _styleStatus[FeatureExist(_featureName) ? 0 : 1];
+            string folderName = Path.GetFullPath(Path.Combine(GlobalPaths.LEVEL_FOLDER, _featureName));
 
-            GUI.contentColor = style.Color;
-            GUILayout.Label(style.Label);
-            GUI.contentColor = Color.white;
+            if (FeatureExists(_featureName))
+            {
+                GUI.contentColor = UnityEngine.Color.red;
+                GUILayout.Label($"{folderName} folder already exist");
+                GUI.contentColor = UnityEngine.Color.white;
+            }
+            else
+            {
+                GUI.contentColor = UnityEngine.Color.green;
+
+                GUILayout.Label($"Will create in {folderName}");
+                GUI.contentColor = UnityEngine.Color.white;
+            }
 
             if (_generateStarted)
             {
-                ToastNotification.Show($"New Feature Created [{_featureName}]"); 
+                ToastNotification.Show($"New Feature Created [{_featureName}]");
                 Close();
             }
         }
+
+        public bool FeatureExists(string featureName) => Directory.Exists(Path.Combine(GlobalPaths.FEATURE_FOLDER, featureName));
         #endregion
 
         #region Utils
@@ -83,7 +95,7 @@ namespace Misc.Editor
                 includePlatforms = includeEditor ? new string[] { "Editor" } : new string[] { },
                 rootNamespce = name,
             };
-            
+
             File.WriteAllText(Path.Combine(path, $"{name}.asmdef"), asmdef.ToString());
         }
         #endregion
@@ -98,20 +110,6 @@ namespace Misc.Editor
             new FeaturePart(){Name = "Data", Editor = false, Included = true},
             new FeaturePart(){Name = "Editor", Editor = true, Included = true},
             new FeaturePart(){Name = "Runtime", Editor = false, Included = true},
-        };
-
-        private static StyleFeatureStatus[] _styleStatus = new StyleFeatureStatus[]
-        {
-            new StyleFeatureStatus()
-            {
-                Color = Color.red,
-                Label = "Feature already exist",
-            },
-            new StyleFeatureStatus()
-            {
-                Color = Color.green,
-                Label = "Feature can be create",
-            }
         };
 
         [System.Serializable]
