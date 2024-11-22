@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 
 namespace Misc.Editor
 {
-    [MainToolbarElement("TogglePlayMode", ToolbarAlign.Left, order:1)]
+    [MainToolbarElement("TogglePlayMode", ToolbarAlign.Left, order:0)]
     public class LevelToggleOverridePlayMode : Button
     {
         [Serialize]
