@@ -6,14 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_/Levels/Tutorial/Scenes/Main.unity
+    path: Assets/_/Levels/tutorial/Scenes/Main.unity
     guid: 04b2a35c482f23841a3ed45a59a17dba
   - enabled: 1
-    path: Assets/_/Levels/Tutorial/Scenes/System.unity
+    path: Assets/_/Levels/tutorial/Scenes/System.unity
     guid: fd869f6a5b8ee8a488e80653a25f4afd
   - enabled: 1
-    path: Assets/_/Levels/Tutorial/Scenes/Light.unity
+    path: Assets/_/Levels/tutorial/Scenes/Light.unity
     guid: 32cccb304e652d742b994dc4bd123307
   m_configObjects:
-    com.unity.addressableassets: {fileID: 11400000, guid: bafc92dab2580e14ab64d32aa32c7ffa, type: 2}
+    com.unity.addressableassets: {fileID: 11400000, guid: 5680191e007768d44937644c4c2ce8ee, type: 2}
   m_UseUCBPForAssetBundles: 0
