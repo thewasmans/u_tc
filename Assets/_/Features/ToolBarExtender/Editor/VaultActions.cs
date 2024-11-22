@@ -10,6 +10,8 @@ public static class VaulActionsConst
 {
     public static string ADDRESSABLE = "Addressable";
     public static string FEATURE = "Features";
+    public static string LEVELS = "Levels";
+    public static readonly string[] DROP_OPTIONS = new string[] { ADDRESSABLE, FEATURE};
     public static Action<int> onChanged;
 }
 
@@ -29,6 +31,12 @@ public static class VaultActions
             Property = VaulActionsConst.FEATURE,
             Text = "New Feature",
             Action = FeatureCreator.ShowWindow
+        },
+        new VaultAction()
+        {
+            Property = VaulActionsConst.LEVELS,
+            Text = "New Level",
+            Action = LevelFolderCreator.ShowWindow
         },
         new VaultAction()
         {
