@@ -1,11 +1,10 @@
-using System;
 using System.Linq;
 using Paps.UnityToolbarExtenderUIToolkit;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Misc.Editor
+namespace ToolBarExtender.Editor
 {
     [MainToolbarElement("TogglePlayMode", ToolbarAlign.Left, order:0)]
     public class LevelToggleOverridePlayMode : Button
