@@ -16,6 +16,7 @@ namespace ToolBarExtender.Editor
             label = "Level Selector";
 
             EditorApplication.projectChanged += RefreshLevelSelection;
+            RefreshLevelSelection();
         }
 
         public void RefreshLevelSelection()
