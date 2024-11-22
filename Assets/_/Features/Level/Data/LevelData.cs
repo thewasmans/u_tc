@@ -32,6 +32,8 @@ namespace Level.Data
                     var scenePath = _sceneReferences[i];
                     scenePath.LoadSceneAsync(LoadSceneMode.Additive);
                 }
+                _sceneLighting.LoadSceneAsync(LoadSceneMode.Additive).Completed += 
+                    e => SceneManager.SetActiveScene(e.Result.Scene);
             }
         }
 
@@ -55,11 +57,13 @@ namespace Level.Data
                 Scene scene = SceneManager.GetSceneByPath(path);
                 EditorSceneManager.CloseScene(scene, true);
             }
+            _sceneLighting.UnLoadScene();
         }
         #endregion
 
         #region Private and Protected
         public List<AssetReference> _sceneReferences;
+        public AssetReference _sceneLighting;
         #endregion
     }
 }
