@@ -9,6 +9,7 @@
 
 Inside symlink, you can place ``Audio``, ``Graphics``, ``Levels`` ... folders
 
+https://miro.com/app/board/uXjVLKW_SnU=/
 
 ## LEAD DEV ARCHITECTURE 
 
