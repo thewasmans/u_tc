@@ -9,6 +9,7 @@ using UnityEngine.UIElements;
 public static class VaulActionsConst
 {
     public static string ADDRESSABLE = "Addressable";
+    public static string SCAN_ADDRESSABLE = "Scan Addressable";
     public static string FEATURE = "Features";
     public static string LEVELS = "Levels";
     public static readonly string[] DROP_OPTIONS = new string[] { ADDRESSABLE, FEATURE};
@@ -43,6 +44,18 @@ public static class VaultActions
             Property = VaulActionsConst.ADDRESSABLE,
             Text = "Build Addressable",
             Action = () => Debug.LogError("New Addresaable Window not implemented")
+        },
+        new VaultAction()
+        {
+            Property = VaulActionsConst.SCAN_ADDRESSABLE,
+            Text = "Scan Addressable",
+            Action = () => Debug.LogError("New Addresaable Window not implemented")
+        },
+        new VaultAction()
+        {
+            Property = VaulActionsConst.SCAN_ADDRESSABLE,
+            Text = "Open Addressable",
+            // Action = GetWindow<>()
         },
     };
 }
