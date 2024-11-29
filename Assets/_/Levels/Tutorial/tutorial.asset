@@ -18,6 +18,11 @@ MonoBehaviour:
     m_SubObjectGUID: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  - m_AssetGUID: e895aed4133bed54e84cdddba6518c66
+    m_SubObjectName: 
+    m_SubObjectGUID: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   _sceneLighting:
     m_AssetGUID: 32cccb304e652d742b994dc4bd123307
     m_SubObjectName: 

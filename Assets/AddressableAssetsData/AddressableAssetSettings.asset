@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultGroup: a890db424505aa24495031fde6dc164b
   m_currentHash:
     serializedVersion: 2
-    Hash: 00000000000000000000000000000000
+    Hash: f518ce1e0079f1307f35562e3f55f9cf
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_CatalogRequestsTimeout: 0
@@ -61,6 +61,7 @@ MonoBehaviour:
   m_GroupAssets:
   - {fileID: 11400000, guid: d23557cd394081640aeefb9c847fdd6e, type: 2}
   - {fileID: 11400000, guid: 76d12e5cc1dc8b847ba9564a32f12d19, type: 2}
+  - {fileID: 11400000, guid: d1d899157cd634e4aa996e9010fac320, type: 2}
   m_BuildSettings:
     m_LogResourceManagerExceptions: 1
     m_BundleBuildPath: Temp/com.unity.addressables/AssetBundles
